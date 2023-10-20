@@ -1,10 +1,11 @@
 const DOMselector = {
   form: document.querySelector("#form"),
   names: document.querySelector(".names"),
-  age: document.querySelector(".age"),
+
   dumbquotes: document.querySelector(".dumb-quotes"),
   h2s: document.querySelectorAll("h2"),
   button: document.querySelector("#button"),
+  img: document.querySelector(".pics"),
 };
 DOMselector.button.addEventListener("click", function (event) {
   event.preventDefault;
@@ -13,11 +14,12 @@ DOMselector.button.addEventListener("click", function (event) {
       "afterend",
       `
   <div class="display-card">
-  
-  <h1 class="display-name" src="${DOMselector.names.value}/>
-  <h2 class="display-age">${DOMselector.age.value}</h2>
+  <div class="card"> 
+  <h2 class="display-name">${DOMselector.names.value}</h2>
   <h3 class="display-dumbquotes">${DOMselector.dumbquotes.value}</h3>
-  <button onclick"clear" class="remove">Remove</button>
+  <img src="${DOMselector.img.value}" alt="" class="pic">
+  <button class="remove">Remove</button>
+  </div>
   </div>
   `
     );
@@ -28,5 +30,4 @@ DOMselector.button.addEventListener("click", function (event) {
       e.target.parentElement.remove(insertcard);
     })
   );
-  clear();
 });
