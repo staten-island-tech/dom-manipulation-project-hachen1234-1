@@ -13,19 +13,20 @@ DOMselector.button.addEventListener("click", function (event) {
       "afterend",
       `
   <div class="display-card">
+  
   <h1 class="display-name" src="${DOMselector.names.value}/>
   <h2 class="display-age">${DOMselector.age.value}</h2>
   <h3 class="display-dumbquotes">${DOMselector.dumbquotes.value}</h3>
-  <button onclick"clear" class="remove-btn">Remove Album</button>
+  <button onclick"clear" class="remove">Remove</button>
   </div>
   `
     );
-    function clear() {
-      DOMselector.names.value = "";
-      DOMselector.age.value = "";
-      DOMselector.dumbquotes.value = "";
-    }
-    clear();
   }
   insertcard();
+  document.querySelectorAll(".remove").forEach((element) =>
+    element.addEventListener("click", function (e) {
+      e.target.parentElement.remove(insertcard);
+    })
+  );
+  clear();
 });
