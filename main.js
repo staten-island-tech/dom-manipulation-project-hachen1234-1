@@ -13,6 +13,7 @@ DOMselector.button.addEventListener("click", function (event) {
     DOMselector.form.insertAdjacentHTML(
       "afterend",
       `
+   
   <div class="display-card">
   <div class="card"> 
   <h2 class="display-name">${DOMselector.names.value}</h2>
@@ -21,6 +22,7 @@ DOMselector.button.addEventListener("click", function (event) {
   <button class="remove">Remove</button>
   </div>
   </div>
+
   `
     );
   }

@@ -11,10 +11,10 @@ body {
 }
 .display-card {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 input,
@@ -37,7 +37,7 @@ input {
   border-radius: 2rem;
   box-shadow: 10px 5px 10px gray;
   background-color: #d7cacd;
-  height: 40rem;
+  height: 43rem;
   width: 39rem;
 }
 img {
