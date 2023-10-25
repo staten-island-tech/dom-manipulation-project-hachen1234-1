@@ -11,18 +11,16 @@ body {
 }
 .display-card {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-evenly;
   flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 input,
 label {
   font-size: 4rem;
   display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 input {
   background-color: white;
@@ -36,7 +34,7 @@ input {
   margin: 3rem;
   border-radius: 2rem;
   box-shadow: 10px 5px 10px gray;
-  background-color: #d7cacd;
+  background-color: rgb(171, 219, 227);
   height: 43rem;
   width: 39rem;
 }

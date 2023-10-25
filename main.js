@@ -1,16 +1,15 @@
 const DOMselector = {
   form: document.querySelector("#form"),
   names: document.querySelector(".names"),
-
   dumbquotes: document.querySelector(".dumb-quotes"),
   h2s: document.querySelectorAll("h2"),
   button: document.querySelector("#button"),
   img: document.querySelector(".pics"),
 };
-DOMselector.button.addEventListener("click", function (event) {
+DOMselector.form.addEventListener("submit", function (event) {
   event.preventDefault;
   function insertcard() {
-    DOMselector.form.insertAdjacentHTML(
+    DOMselector.button.insertAdjacentHTML(
       "afterend",
       `
    
@@ -22,7 +21,6 @@ DOMselector.button.addEventListener("click", function (event) {
   <button class="remove">Remove</button>
   </div>
   </div>
-
   `
     );
   }
