@@ -6,6 +6,7 @@ const DOMselector = {
   button: document.querySelector("#button"),
   img: document.querySelector(".pics"),
 };
+
 DOMselector.form.addEventListener("submit", function (event) {
   event.preventDefault;
   function insertcard() {
