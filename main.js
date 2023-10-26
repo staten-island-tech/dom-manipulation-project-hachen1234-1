@@ -3,7 +3,7 @@ const DOMselector = {
   names: document.querySelector(".names"),
   dumbquotes: document.querySelector(".dumb-quotes"),
   h2s: document.querySelectorAll("h2"),
-  button: document.querySelector("#button"),
+  button: document.querySelector("#addbtn"),
   img: document.querySelector(".pics"),
 };
 
@@ -22,11 +22,18 @@ function insertcard(event) {
 </div>
 `
   );
-  insertcard();
-  document.querySelectorAll(".remove").forEach((element) =>
-    element.addEventListener("submit", function (e) {
-      e.target.parentElement.remove(insertcard);
-    })
-  );
+  function clear() {
+    DOMselector.names.value = "";
+    DOMselector.dumbquotes.value = "";
+    DOMselector.img.value = "";
+  }
+  clear();
 }
+
+document.querySelectorAll(".remove").forEach((element) =>
+  element.addEventListener("click", function (e) {
+    e.target.parentElement.remove(insertcard);
+  })
+);
+
 DOMselector.form.addEventListener("submit", insertcard);
