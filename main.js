@@ -7,28 +7,26 @@ const DOMselector = {
   img: document.querySelector(".pics"),
 };
 
-DOMselector.form.addEventListener("submit", function (event) {
-  event.preventDefault;
-  function insertcard() {
-    DOMselector.button.insertAdjacentHTML(
-      "afterend",
-      `
-   
-  <div class="display-card">
-  <div class="card"> 
-  <h2 class="display-name">${DOMselector.names.value}</h2>
-  <h3 class="display-dumbquotes">${DOMselector.dumbquotes.value}</h3>
-  <img src="${DOMselector.img.value}" alt="" class="pic">
-  <button class="remove">Remove</button>
-  </div>
-  </div>
-  `
-    );
-  }
+function insertcard(event) {
+  event.preventDefault();
+  DOMselector.button.insertAdjacentHTML(
+    "afterend",
+    `
+<div class="display-card">
+<div class="card"> 
+<h2 class="display-name">${DOMselector.names.value}</h2>
+<h3 class="display-dumbquotes">${DOMselector.dumbquotes.value}</h3>
+<img src="${DOMselector.img.value}" alt="" class="pics">
+<button class="remove">Remove</button>
+</div>
+</div>
+`
+  );
   insertcard();
   document.querySelectorAll(".remove").forEach((element) =>
-    element.addEventListener("click", function (e) {
+    element.addEventListener("submit", function (e) {
       e.target.parentElement.remove(insertcard);
     })
   );
-});
+}
+DOMselector.form.addEventListener("submit", insertcard);
