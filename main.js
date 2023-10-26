@@ -5,6 +5,7 @@ const DOMselector = {
   h2s: document.querySelectorAll("h2"),
   button: document.querySelector("#addbtn"),
   img: document.querySelector(".pics"),
+  dbtn: document.querySelector(".remove"),
 };
 
 function insertcard(event) {
@@ -29,11 +30,11 @@ function insertcard(event) {
   }
   clear();
 }
-
-document.querySelectorAll(".remove").forEach((element) =>
-  element.addEventListener("click", function (e) {
-    e.target.parentElement.remove(insertcard);
-  })
-);
-
-DOMselector.form.addEventListener("submit", insertcard);
+DOMselector.form.addEventListener("submit", insertcard, del);
+function del() {
+  document.querySelectorAll(".remove").forEach((element) =>
+    element.addEventListener("click", function (e) {
+      e.target.parentElement.remove(insertcard);
+    })
+  );
+}
