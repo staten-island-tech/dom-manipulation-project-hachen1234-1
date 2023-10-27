@@ -7,6 +7,7 @@ const DOMselector = {
   img: document.querySelector(".pics"),
   dbtn: document.querySelector(".remove"),
 };
+DOMselector.form.addEventListener("submit", insertcard);
 
 function insertcard(event) {
   event.preventDefault();
@@ -29,12 +30,12 @@ function insertcard(event) {
     DOMselector.img.value = "";
   }
   clear();
-}
-DOMselector.form.addEventListener("submit", insertcard, del);
-function del() {
-  document.querySelectorAll(".remove").forEach((element) =>
-    element.addEventListener("click", function (e) {
-      e.target.parentElement.remove(insertcard);
-    })
-  );
+  function del() {
+    document.querySelectorAll(".remove").forEach((element) =>
+      element.addEventListener("click", function (e) {
+        e.target.parentElement.remove(insertcard);
+      })
+    );
+  }
+  del();
 }
