@@ -32,7 +32,7 @@ function insertcard(event) {
 }
 DOMselector.form.addEventListener("submit", insertcard, del);
 function del() {
-  document.dbtn(".remove").forEach((element) =>
+  document.querySelectorAll(".remove").forEach((element) =>
     element.addEventListener("click", function (e) {
       e.target.parentElement.remove(insertcard);
     })
