@@ -5,7 +5,6 @@ const DOMselector = {
   h2s: document.querySelectorAll("h2"),
   button: document.querySelector("#addbtn"),
   img: document.querySelector(".pics"),
-  dbtn: document.querySelector(".remove"),
 };
 DOMselector.form.addEventListener("submit", insertcard);
 
